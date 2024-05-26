@@ -17,21 +17,3 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-//WebUI.setText(findTestObject('login_page/username_editText'), findTestData('user').getValue(1, 2))
-//
-//WebUI.setText(findTestObject('login_page/password_editText'), findTestData('user').getValue(2, 1))
-//
-//WebUI.click(findTestObject('login_page/login_button'))
-//
-//WebUI.verifyElementText(findTestObject('errorLoginInvalid_label'), 'Epic sadface: Sorry, this user has been locked out.')
-
-for (def rowNum = 2; rowNum <= 3; rowNum++) {
-    WebUI.setText(findTestObject('login_page/username_editText'), findTestData('user').getValue(1, rowNum))
-
-    WebUI.setText(findTestObject('login_page/password_editText'), findTestData('user').getValue(2, rowNum))
-
-    WebUI.click(findTestObject('login_page/login_button'))
-
-    WebUI.verifyElementText(findTestObject('errorLoginInvalid_label'), findTestData('user').getValue(3, rowNum))
-}
-
